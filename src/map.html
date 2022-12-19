@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <script src="map.js"></script>
-    <title>Title</title>
-</head>
-<body>
-    <nav>
-        <a href="index.html"><img src="images/maison.png" alt="Home" class="nava"></a> <a href="info.html"><img src="images/i.png" alt="Info"  class="nava"></a>
-        <a href="#"><img src="images/map.png" alt="Map"  class="selected"></a> <a href="account.html"><img src="images/profile.png" alt="Account"  class="nava"></a>
-    </nav>
-    <div id="map"></div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="map.js"></script>
+        <title>Title</title>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html"><img src="images/maison.png" alt="Home" class="nava"></a> <a href="info.html"><img src="images/i.png" alt="Info"  class="nava"></a>
+            <a href="#"><img src="images/map.png" alt="Map"  class="selected"></a> <a href="account.html"><img src="images/profile.png" alt="Account"  class="nava"></a>
+        </nav>
+        <div>
+            <h1 style="font-size: 40px">Recherche Ville</h1>
+        </div>
+        <div>
+            <form>
+                <input type="text" id="search" name="search">
+                <button type="submit" style="display: flex">
+                    <img src="images/loupe.png" height="32" width="32" alt="recherche">
+                </button>
+            </form>
+        </div>
+        <div id="map"></div>
+        <div id="listing"></div>
+    </body>
 </html>
