@@ -1,16 +1,16 @@
 *{
     font-family:Verdana, sans-serif;
 }
-div{
+div {
     display: flex;     
     align-items: center;
 
 }
-body{
+body {
     background-color: #E2E8FF;
 }
 
-nav{
+nav {
     text-align: center;
     display: flex;
     background-color: #04DC00;
@@ -21,13 +21,13 @@ nav{
     vertical-align: bottom;
 }
 
-img.nava{
+img.nava {
     width: 32px;
     height: 32px;
     vertical-align: middle;
 }
 
-img.selected{
+img.selected {
     border-radius: 50%;
     border: 2px solid #F0AC2D;
     height: 32px;
@@ -36,12 +36,13 @@ img.selected{
     display: inline-block;
 }
 
-img.fleche{
+img.fleche {
     width: 20px;
     height: 20px;
     vertical-align: middle;
     margin-top: 5px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 .rotate {
@@ -51,3 +52,19 @@ img.fleche{
 .rotate.reverse {
     transform: rotate(0deg);
   }
+
+.DesignQuestRep{
+    margin: 25px;
+    background-color: #F0AC2D;
+    border: 1px solid #333;
+    width:500px;
+    display: flex;
+    justify-content: center;
+}
+.Text{
+    margin: 35px;
+    background-color: #e2c99c;
+    font-size: 18px;
+    padding: 1em 2em;
+    border-radius: 10px;
+}
