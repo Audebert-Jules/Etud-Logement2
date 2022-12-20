@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -23,7 +22,37 @@
             </form>
         </div>
         <div id="map"></div>
-        <div id="listing"></div>
+        <div id="listing">
+
+        <?php
+
+        $host = 'localhost';
+        $user = 'root';
+        $password = '';
+        $dbname = 'etudlogement';
+        $conn = mysqli_connect($host, $user, $password, $dbname);
+
+        $sql = "SELECT * FROM lodging";
+        $result = mysqli_query($conn, $sql);
+
+        $data = array();
+        while ($row = mysqli_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+        $json_data = json_encode($data);
+        foreach ($data as $lodging){?>
+            <div class="list">
+                <img src="images/appart1.jpg" height="100" width="100" alt="studio"/>
+                <h3><u>Studio <?= $lodging["Surface"] ?>m²</u></h3>
+                <ul>
+                    <li>${item.rent}€/mois</li>
+                    <li>${item.adresse}</li>
+                </ul>
+            </div>
+        <?php }
+
+        ?>
+        </div>
         <script src="map.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv6xxF2w0un9TchEiWEuFD3YkWhP7uiLE&callback=initMap&v=weekly"
                 defer></script>
