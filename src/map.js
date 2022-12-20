@@ -8,8 +8,8 @@ window.onload = function (){
         /*html += `<div>${item.name}: ${item.adresse}</div>`;
     });*/
         html += `<div class="list">
-            <img src="${item.image}" height="80" width="80" alt="studio" style="float: left"/>
-            <h3 style="margin-left: 10px"><u>${item.name}</u></h3>
+            <img src="${item.image}" height="100" width="100" alt="studio"/>
+            <h3><u>${item.name}</u></h3>
             <ul>
                 <li>${item.rent}€/mois</li>
                 <li>${item.adresse}</li>
