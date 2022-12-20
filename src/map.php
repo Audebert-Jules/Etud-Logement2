@@ -42,11 +42,11 @@
         $json_data = json_encode($data);
         foreach ($data as $lodging){?>
             <div class="list">
-                <img src="images/appart1.jpg" height="100" width="100" alt="studio"/>
+                <img src="<?= $lodging["Photo"] ?>" height="100" width="100" alt="studio"/>
                 <h3><u>Studio <?= $lodging["Surface"] ?>m²</u></h3>
                 <ul>
-                    <li>${item.rent}€/mois</li>
-                    <li>${item.adresse}</li>
+                    <li><?= $lodging["Rent"] ?>€/mois</li>
+                    <li><?= $lodging["Street"] ?>, <?= $lodging["PostalCode"] ?>, <?= $lodging["City"] ?></li>
                 </ul>
             </div>
         <?php }
