@@ -6,13 +6,18 @@
         <title>Title</title>
     </head>
     <body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv6xxF2w0un9TchEiWEuFD3YkWhP7uiLE&callback=initMap&v=weekly"
+            defer></script>
+        <script src="map.js"></script>
         <nav class="fixed-top sticky-top">
-            <a href="index.html"><img src="images/maison.png" alt="Home" class="nava"></a> <a href="info.html"><img src="images/i.png" alt="Info"  class="nava"></a>
-            <a href="#"><img src="images/map.png" alt="Map"  class="selected"></a> <a href="account.html"><img src="images/profile.png" alt="Account"  class="nava"></a>
+            <a href="index.php"><img src="images/maison.png" alt="Home" class="nava"></a> <a href="info.php"><img src="images/i.png" alt="Info"  class="nava"></a>
+            <a href="#"><img src="images/map.png" alt="Map"  class="selected"></a> <a href="Login.php"><img src="images/profile.png" alt="Account"  class="nava"></a>
         </nav>
+
         <div>
             <h1 style="font-size: 40px; margin-top: 5px">Recherche Ville</h1>
         </div>
+
         <div>
             <form>
                 <input type="text" id="search" name="search">
@@ -22,29 +27,30 @@
             </form>
         </div>
         <div id="map"></div>
+
         <div id="listing">
+            <?php
 
-        <?php
+            $host = 'localhost';
+            $user = 'Test';
+            $password = 'Y(2g7{S?pPm4';
+            $dbname = 'etudlogement';
 
-        $host = 'localhost';
-        $user = 'root';
-        $password = '';
-        $dbname = 'etudlogement';
-        $conn = mysqli_connect($host, $user, $password, $dbname);
+            $conn = mysqli_connect($host, $user, $password, $dbname);
+            $sql = "SELECT * FROM Lodging";
+            $result = mysqli_query($conn, $sql);
 
-        $sql = "SELECT * FROM lodging";
-        $result = mysqli_query($conn, $sql);
+            $data = array();
+            while ($row = mysqli_fetch_assoc($result)) {
+                $data[] = $row;
+            }
+            $json_data = json_encode($data); ?>
 
-        $data = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $data[] = $row;
-        }
-        $json_data = json_encode($data);
-        ?>
-            <script>setList(<?= $json_data ?>)</script>
-            <?php foreach ($data as $lodging){?>
-            <div class="list">
-                <img src="images/appart1.jpg" height="100" width="100" alt="studio"/>
+             <script>window.onload = function () { generateMarkers(<?= $json_data ?>) }</script>
+            <?php
+            foreach ($data as $lodging){?>
+                <div class="list" onclick="changeMarker(<?= $lodging["Longitude"] ?>, <?= $lodging["Latitude"] ?>)">
+                <img src="<?= $lodging["Picture"] ?>" height="100" width="100" alt="studio"/>
                 <h3><u>Studio <?= $lodging["Surface"] ?>m²</u></h3>
                 <ul>
                     <li><?= $lodging["Rent"] ?>€/mois</li>
@@ -52,11 +58,7 @@
                 </ul>
             </div>
         <?php }
-
         ?>
         </div>
-        <script src="map.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv6xxF2w0un9TchEiWEuFD3YkWhP7uiLE&callback=initMap&v=weekly"
-                defer></script>
     </body>
 </html>
