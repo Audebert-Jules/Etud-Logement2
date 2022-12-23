@@ -1,0 +1,85 @@
+        /* CSS DE BIBI */
+
+        * {
+            font-family: Verdana;
+        }
+
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -150px;
+            margin-top: -100px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type=submit] {
+            border: solid 1px;
+            margin-bottom: 10px;
+            float: right;
+            padding: 15px;
+            outline: none;
+            border-radius: 7px;
+            width: 120px;
+        }
+
+        input[type=text],
+        [type=password] {
+            border: solid 1px #f0ac2d;
+            margin-bottom: 10px;
+            padding: 16px;
+            outline: none;
+            border-radius: 7px;
+            width: 300px;
+        }
+
+        .erreur {
+            text-align: center;
+            color: red;
+            margin-top: 10px;
+        }
+
+        a {
+            font-size: 14pt;
+            color: blue;
+            text-decoration: none;
+            font-weight: normal;
+        }
+
+        * {
+            font-family: Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #e2e8ff93;
+            text-align: center;
+        }
+
+        nav {
+            text-align: center;
+            display: flex;
+            background-color: #04DC00;
+            position: relative;
+            top: 0;
+            justify-content: space-around;
+            height: 40px;
+            vertical-align: bottom;
+        }
+
+        img.nava {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
+        }
+
+        img.selected {
+            border-radius: 50%;
+            border: 2px solid #F0AC2D;
+            height: 32px;
+            width: 32px;
+            background: #F0AC2D;
+            display: inline-block;
+        }
