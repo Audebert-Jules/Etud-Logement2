@@ -3,20 +3,19 @@ window.onload = function (){
     const items = getList();
 
     let html = '';
-    let counter = 0;
 
     items.forEach(item => {
         /*html += `<div>${item.name}: ${item.adresse}</div>`;
     });*/
-        html += `<div class="list" style="grid-column: ${counter % 2 + 1}">
-            <img src="${item.image}" height="100" width="100" alt="studio"/>
+        html += `<div class="list2">
+            <img src="${item.image}" height="100" width="100" alt="studio" style="margin: auto;"/>
             <h3><u>${item.name}</u></h3>
             <ul>
                 <li>${item.rent}€/mois</li>
                 <li>${item.adresse}</li>
             </ul>
-        </div>`;
-        counter++;
+        </div>
+        <br/>`;
     });
 
     listElement.innerHTML = html;

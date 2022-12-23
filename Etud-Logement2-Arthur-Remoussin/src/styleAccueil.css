@@ -1,13 +1,13 @@
-*{
+* {
     font-family: Verdana, sans-serif;
 }
 
-body{
+body {
     background-color: #E2E8FF;
     text-align: center;
 }
 
-nav{
+nav {
     text-align: center;
     display: flex;
     background-color: #04DC00;
@@ -18,13 +18,13 @@ nav{
     vertical-align: bottom;
 }
 
-img.nava{
+img.nava {
     width: 32px;
     height: 32px;
     vertical-align: middle;
 }
 
-img.selected{
+img.selected {
     border-radius: 50%;
     border: 2px solid #F0AC2D;
     height: 32px;
@@ -57,35 +57,96 @@ button[type="submit"] {
     border-radius: 4px;
 }
 
-#listing{
+#listing {
     width: 60%;
     margin: auto;
 }
 
-#listing > *{
+#listing>* {
     text-align: center;
 }
 
-.list {
+.list2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 100px 60px 40px;
-    border: 1.5px solid rgba(190, 172, 172, 0.416);
+    border: 1.5px solid rgba(79, 71, 71, 0.404);
+    background-color: #f0ac2d72;
+    border-radius: 50px;
+    max-width: 400px;
+    margin: auto;
 }
 
-.list img {
+.list2 img {
     grid-column: 1;
-    grid-row: 1 ;
+    grid-row: 1;
+
 }
 
-.list h3 {
+.list2 h3 {
     grid-column: 1;
     grid-row: 2;
     margin-left: 10px;
 }
 
-.list ul {
+.list2 ul {
     grid-column: 1;
     grid-row: 3;
     margin-top: -10px;
+    list-style-type: none;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: auto;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: none;
+    border: none;
+}
+
+.card1 {
+    width: 50%;
+}
+
+.entete {
+    border: 1px solid rgba(204, 204, 204, 0.459);
+    background-color: #ceab69a4;
+    border-radius: 15px;
+}
+
+.formulaire {
+    border: 2px solid rgba(204, 204, 204, 0.459);
+    font-size: 35px;
+    border-radius: 15px;
+}
+
+.nomprenom {
+    display: flex;
+    align-items: center;
 }
