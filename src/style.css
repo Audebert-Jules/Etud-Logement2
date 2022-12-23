@@ -1,5 +1,10 @@
+*{
+    font-family: Verdana, sans-serif;
+}
+
 body{
     background-color: #E2E8FF;
+    text-align: center;
 }
 
 nav{
@@ -26,4 +31,68 @@ img.selected{
     width: 32px;
     background: #F0AC2D;
     display: inline-block;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    display: flex;
+    background-color: #E2E8FF;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+#listing{
+    width: 60%;
+    margin: auto;
+}
+
+#listing > *{
+    background-color: #F0AC2D;
+    text-align: left;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 60px 40px;
+    border: 1.5px solid darkred;
+}
+
+.list img {
+    grid-column: 1;
+    grid-row: 1 / 2;
+}
+
+.list h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin-left: 10px;
+}
+
+.list ul {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -10px;
+}
+
+#map {
+    height: 400px;
+    width: 60%;
+    margin: auto;
 }
